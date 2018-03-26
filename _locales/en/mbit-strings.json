@@ -1,0 +1,33 @@
+{
+
+  "mbit_Display.LED1|block": "LED|Pin %pin|state %value",
+  "mbit_Display.LED2|block": "LED|Pin %pin|lightness %value",
+  "mbit_Display.BreathLED|block": "breath light|port %pin",
+  "mbit_Display.RGB|block": "RGB LED|portR %pin1|portG %pin2|portB %pin3|red %value1|green %value2|blue %value3",
+  "mbit_Display.RGB2|block": "RGB LED|portR %pin1|portG %pin2|portB %pin3|Display %value",
+
+  "mbit_Input.TouchPad|block": "touch switch|port %pin|return %value",
+  "mbit_Input.Rocker|block": "rocker|VRX %pin1|VRY %pin2|SW %pin3|return %value",
+  "mbit_Input.Button|block": "button|port %pin|return %value",
+
+  "mbit_Sensor.Voice_Sensor|block": "sounds sensor|port %pin|return %value",
+  "mbit_Sensor.IR_Sensor|block": "Infrared sensor|port %pin|  |%value|obstacle",
+  "mbit_Sensor.IR_Send|block": "Infrared transmitter|port %pin",
+  "mbit_Sensor.Ultrasonic|block": "ultrasonic|TX port %Trig|RX port %Echo",
+
+  "mbit_Music.Buzzer|block": "active buzzer|port %pin|value %value",
+
+  "mbit_Motor.Fan|block": "fan|port %pin|speed %value",
+  "mbit_Motor.Servo|block": "servo|port %pin|angle %value",
+
+  "mbit_Robot.RGB_Car_Big|block": "robot RGB light|red %value1|green %value2|blue %value3",
+  "mbit_Robot.RGB_Car_Big2|block": "robot RGB light|select car light color %value",
+  "mbit_Robot.Ultrasonic_Car|block": "return distance (cm)",
+  "mbit_Robot.RGB_Car_Program|block": "RGB flow light",
+  "mbit_Robot.Music_Car|block": "robot music play|%index",
+  "mbit_Robot.Line_Sensor|block": "tracking sensor|direct %direct|detected %value",
+  "mbit_Robot.Avoid_Sensor|block": "avoid obstacle sensor|detected %value",
+  "mbit_Robot.Servo_Car|block": "robot servo|index %num|angle %value",
+  "mbit_Robot.CarCtrl|block": "robot control|%index",
+  "mbit_Robot.CarCtrlSpeed|block": "robot control|%index|speed %speed"
+}

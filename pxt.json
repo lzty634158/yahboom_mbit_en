@@ -1,6 +1,6 @@
 {
     "name": "mbit",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "description": "Extension for YahBoom m:bit",
     "license": "MIT",
     "dependencies": {
@@ -13,7 +13,7 @@
     "files": [
         "README.md",
         "main.ts",
-        "_locales/zh/mbit-strings.json"
+        "_locales/en/mbit-strings.json"
 
     ],
     "testFiles": [
