@@ -29,5 +29,6 @@
   "mbit_Robot.Avoid_Sensor|block": "avoid obstacle sensor|detected %value",
   "mbit_Robot.Servo_Car|block": "robot servo|index %num|angle %value",
   "mbit_Robot.CarCtrl|block": "robot control|%index",
-  "mbit_Robot.CarCtrlSpeed|block": "robot control|%index|speed %speed"
+  "mbit_Robot.CarCtrlSpeed|block": "robot control|%index|speed %speed",
+  "mbit_Robot.CarCtrlSpeed2|block": "robot control|%index|speed1 %speed1|speed2 %speed2"
 }
