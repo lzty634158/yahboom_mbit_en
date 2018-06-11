@@ -466,7 +466,7 @@ namespace mbit_Robot {
         Blue,
         //% blockId="White" block="white"
         White,
-        //% blockId="Cyan" block="cygn"
+        //% blockId="Cyan" block="cyan"
         Cyan,
         //% blockId="Pinkish" block="magenta"
         Pinkish,
