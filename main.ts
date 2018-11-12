@@ -250,7 +250,7 @@ namespace mbit_Sensor {
 
         // read pulse
         let d = pins.pulseIn(Echo, PulseValue.High, 23200);
-        return d / 58;
+        return  Math.floor(d / 58);
     }
 }
 
@@ -912,7 +912,7 @@ namespace mbit_Robot {
 
         // read pulse
         let d = pins.pulseIn(DigitalPin.P15, PulseValue.High, 43200);
-        return d / 58;
+        return  Math.floor(d / 58);
     }
 
     //% blockId=mbit_Music_Car block="Music_Car|%index"
