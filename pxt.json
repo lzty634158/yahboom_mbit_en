@@ -1,11 +1,11 @@
 {
     "name": "mbit",
-    "version": "1.2.0",
-    "description": "Extension for YahBoom m:bit",
+    "version": "3.0.1",
+    "description": "Extension for YahBoom m:bit V3.0.1",
     "license": "MIT",
     "dependencies": {
         "core": "*",
-        "neopixel": "github:microsoft/pxt-neopixel#v0.3.10",
+        "neopixel": "github:lzty634158/pxt-neopixel",
         "Mbit_IR":  "github:lzty634158/yahboom_mbit_IR"
 	
 
