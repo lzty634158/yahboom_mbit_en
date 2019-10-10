@@ -610,14 +610,8 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
-        }
-        if (speed2 <= 350) {
-            speed2 = 350
         }
 
         setPwm(12, 0, speed1);
@@ -639,16 +633,9 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
         }
-        if (speed2 <= 350) {
-            speed2 = 350
-        }
-
         setPwm(12, 0, 0);
         setPwm(13, 0, speed1);
 
@@ -669,14 +656,8 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
-        }
-        if (speed2 <= 350) {
-            speed2 = 350
         }
         
         setPwm(12, 0, speed1);
@@ -699,14 +680,8 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
-        }
-        if (speed2 <= 350) {
-            speed2 = 350
         }
         
         setPwm(12, 0, speed1);
@@ -741,14 +716,8 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
-        }
-        if (speed2 <= 350) {
-            speed2 = 350
         }        
         
         setPwm(12, 0, 0);
@@ -771,16 +740,9 @@ namespace mbit_Robot {
         if (speed1 >= 4096) {
             speed1 = 4095
         }
-        if (speed1 <= 350) {
-            speed1 = 350
-        }
         if (speed2 >= 4096) {
             speed2 = 4095
-        }
-        if (speed2 <= 350) {
-            speed2 = 350
-        }    
-            
+        }      
         setPwm(12, 0, speed1);
         setPwm(13, 0, 0);
 
@@ -903,16 +865,21 @@ namespace mbit_Robot {
     export function Ultrasonic_Car(): number {
 
         // send pulse
-        pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
-        pins.digitalWritePin(DigitalPin.P14, 0);
-        control.waitMicros(2);
-        pins.digitalWritePin(DigitalPin.P14, 1);
-        control.waitMicros(15);
-        pins.digitalWritePin(DigitalPin.P14, 0);
-
-        // read pulse
-        let d = pins.pulseIn(DigitalPin.P15, PulseValue.High, 43200);
-        return  Math.floor(d / 58);
+        let list:Array<number> = [0, 0, 0, 0, 0];
+        for (let i = 0; i < 5; i++) {
+		pins.setPull(DigitalPin.P14, PinPullMode.PullNone);
+		pins.digitalWritePin(DigitalPin.P14, 0);
+		control.waitMicros(2);
+		pins.digitalWritePin(DigitalPin.P14, 1);
+		control.waitMicros(15);
+		pins.digitalWritePin(DigitalPin.P14, 0);
+		
+		let d = pins.pulseIn(DigitalPin.P15, PulseValue.High, 43200);
+		list[i] = Math.floor(d / 40)
+        }
+        list.sort();
+        let length = (list[1] + list[2] + list[3])/3;
+        return  Math.floor(length);
     }
 
     //% blockId=mbit_Music_Car block="Music_Car|%index"
@@ -1070,8 +1037,8 @@ namespace mbit_Robot {
         switch (index) {
             case CarState.Car_Run: Car_run(speed, speed); break;
             case CarState.Car_Back: Car_back(speed, speed); break;
-            case CarState.Car_Left: Car_left(speed, speed); break;
-            case CarState.Car_Right: Car_right(speed, speed); break;
+            case CarState.Car_Left: Car_left(0, speed); break;
+            case CarState.Car_Right: Car_right(speed, 0); break;
             case CarState.Car_Stop: Car_stop(); break;
             case CarState.Car_SpinLeft: Car_spinleft(speed, speed); break;
             case CarState.Car_SpinRight: Car_spinright(speed, speed); break;
@@ -1087,8 +1054,8 @@ namespace mbit_Robot {
         switch (index) {
             case CarState.Car_Run: Car_run(speed1, speed2); break;
             case CarState.Car_Back: Car_back(speed1, speed2); break;
-            case CarState.Car_Left: Car_left(speed1, speed2); break;
-            case CarState.Car_Right: Car_right(speed1, speed2); break;
+            case CarState.Car_Left: Car_left(0, speed2); break;
+            case CarState.Car_Right: Car_right(speed1, 0); break;
             case CarState.Car_Stop: Car_stop(); break;
             case CarState.Car_SpinLeft: Car_spinleft(speed1, speed2); break;
             case CarState.Car_SpinRight: Car_spinright(speed1, speed2); break;
