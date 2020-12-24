@@ -935,6 +935,7 @@ namespace mbit_Robot {
 
         let temp: boolean = false;
         pins.digitalWritePin(DigitalPin.P9, 0);
+        control.waitMicros(10);
         switch (value) {
             case enAvoidState.OBSTACLE: {
                 if (pins.analogReadPin(AnalogPin.P3) < 800) {
