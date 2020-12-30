@@ -934,10 +934,12 @@ namespace mbit_Robot {
     export function Avoid_Sensor(value: enAvoidState): boolean {
 
         let temp: boolean = false;
+        pins.setPull(DigitalPin.P9, PinPullMode.PullUp)
         pins.digitalWritePin(DigitalPin.P9, 0);
-        control.waitMicros(10);
+        control.waitMicros(100);
         switch (value) {
             case enAvoidState.OBSTACLE: {
+                serial.writeNumber(pins.analogReadPin(AnalogPin.P3))
                 if (pins.analogReadPin(AnalogPin.P3) < 800) {
                 
                     temp = true;
